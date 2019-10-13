@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="org.uzvermode.poolcalc.ui.redox.RedoxFragment"
+        android:label="@string/title_redox"
+        tools:layout="@layout/fragment_redox" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="org.uzvermode.poolcalc.ui.ph.PhFragment"
+        android:label="@string/title_ph"
+        tools:layout="@layout/fragment_ph" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="org.uzvermode.poolcalc.ui.chlorine.ChlorineFragment"
+        android:label="@string/title_chlorine"
+        tools:layout="@layout/fragment_chlorine" />
+</navigation>

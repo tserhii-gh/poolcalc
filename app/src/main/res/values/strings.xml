@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PoolCalc</string>
+    <string name="title_redox">Rx</string>
+    <string name="title_ph">pH</string>
+    <string name="title_chlorine">Cl</string>
+    <string name="weight">г</string>
+    <string name="unit_volume">м³</string>
+<!--    <string name="ph">pH</string>-->
+    <string name="not_av">---</string>
+    <string name="unit_redox">mV</string>
+    <string name="unit_chlorine">ppm</string>
+</resources>
