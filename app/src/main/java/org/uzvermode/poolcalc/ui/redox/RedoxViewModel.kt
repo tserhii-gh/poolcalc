@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.text.DecimalFormat
 
 class RedoxViewModel : ViewModel() {
 
@@ -67,10 +66,8 @@ class RedoxViewModel : ViewModel() {
     fun getActiveChlorine(): LiveData<String> {
         val REDOX = resultRedox.value
         val PH = resultPh.value
-
         val redoxRow = table[phLv.indexOf(PH)]
         maxRedox.value = redoxRow.last() - 481
-        Log.e(TAG, "$PH - $REDOX - ${maxRedox.value}")
         if (redoxRow.contains(REDOX!!)){
             resultChlorine.value = chlorine[redoxRow.indexOf(REDOX)].toString()
         } else {

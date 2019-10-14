@@ -31,8 +31,8 @@ class RedoxFragment : Fragment() {
         val textChlorine: TextView = root.findViewById(R.id.text_chlorine)
         val phSeekBar: SeekBar = root.findViewById(R.id.ph_level)
         val rxSeekBar: SeekBar = root.findViewById(R.id.rx_level)
-        redoxViewModel.setPh(4)
-        redoxViewModel.setRedox(180)
+
+        initUnits(textPh, textRedox, textChlorine)
 
         phSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
@@ -67,12 +67,18 @@ class RedoxFragment : Fragment() {
             override fun onStopTrackingTouch(seekBar: SeekBar) {
             }
         })
-        textPh.text = redoxViewModel.getPh()
-        textRedox.text = redoxViewModel.getRedox()
+
+        return root
+    }
+
+    private fun initUnits(tph: TextView, trx: TextView, tcl: TextView){
+        redoxViewModel.setPh(4)
+        redoxViewModel.setRedox(180)
+        tph.text = redoxViewModel.getPh()
+        trx.text = redoxViewModel.getRedox()
 
         redoxViewModel.getActiveChlorine().observe(this, Observer {
-                        textChlorine.text = it
+            tcl.text = it
         })
-        return root
     }
 }
