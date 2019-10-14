@@ -57,28 +57,16 @@ class RedoxViewModel : ViewModel() {
     )
 
     private val resultPh = MutableLiveData<String>()
-    private val resultRedox = MutableLiveData<Int>()
+    private val resultRedoxIdx = MutableLiveData<Int>()
+    private val resultRedoxStr = MutableLiveData<String>()
     private val resultChlorine = MutableLiveData<String>()
-    private val maxRedox = MutableLiveData<Int>()
-    private var lastValue = "---"
+//    private val maxRedox = MutableLiveData<Int>()
+//    private var lastValue = "---"
 
 
     fun getActiveChlorine(): LiveData<String> {
-        val REDOX = resultRedox.value
-        val PH = resultPh.value
-        val redoxRow = table[phLv.indexOf(PH)]
-        maxRedox.value = redoxRow.last() - 481
-        if (redoxRow.contains(REDOX!!)){
-            resultChlorine.value = chlorine[redoxRow.indexOf(REDOX)].toString()
-        } else {
-            try {
-                val rx = redoxRow[-(redoxRow.binarySearch(REDOX) + 1)]
-                lastValue = chlorine[table[phLv.indexOf(PH)].indexOf(rx)].toString()
-                resultChlorine.value = lastValue
-            } catch (e: ArrayIndexOutOfBoundsException) {
-                resultChlorine.value = lastValue
-            }
-        }
+        val REDOX = resultRedoxIdx.value
+        resultChlorine.value = chlorine[REDOX!!].toString()
         return resultChlorine
     }
 
@@ -89,24 +77,23 @@ class RedoxViewModel : ViewModel() {
 
     fun setPh(intVal: Int):LiveData<String> {
         resultPh.value = phLv[intVal]
-        Log.e(TAG, resultPh.value!!)
         return resultPh
     }
 
 
-    fun setRedox(intVal: Int): LiveData<Int> {
-        resultRedox.value = (480 + intVal)
-        return resultRedox
+    fun setRedox(intVal: Int): LiveData<String> {
+        val PH = resultPh.value
+        val redoxRow = table[phLv.indexOf(PH)]
+        resultRedoxIdx.value = intVal
+        resultRedoxStr.value = redoxRow[resultRedoxIdx.value!!].toString()
+        return resultRedoxStr
     }
 
 
-    fun getRedox(): String {
-        return resultRedox.value.toString()
+    fun getRedox(): String? {
+        val PH = resultPh.value
+        val redoxRow = table[phLv.indexOf(PH)]
+        resultRedoxStr.value = redoxRow[resultRedoxIdx.value!!].toString()
+        return resultRedoxStr.value
     }
-
-
-    fun getMaxRedox(): Int {
-        return maxRedox.value!!
-    }
-
 }

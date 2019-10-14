@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorLED">#42A5F5</color>
-    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimary">#FCE4EC</color>
     <color name="colorProgressBar">#2196F3</color>
     <color name="colorThumb">#64B5F6</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorUnits">#ededed</color>
+    <color name="colorUnits">#B3E5FC</color>
     <color name="colorPh">#FFFFFF</color>
     <color name="colorRx">#FFFFFF</color>
     <color name="colorCl">#FFFFFF</color>
+    <color name="colorNavItem">#B3E5FC</color>
+    <color name="colorNavItemSelected">#FFFFFF</color>
+    <color name="colorNavBackground">#42A5F5</color>
 </resources>

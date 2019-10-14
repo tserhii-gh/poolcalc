@@ -2,16 +2,12 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorLED</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="pHTextWithShadow" parent="@android:style/TextAppearance">
-        <item name="android:shadowDx">0.0</item>
-        <item name="android:shadowDy">0.0</item>
-        <item name="android:shadowRadius">5.0</item>
-        <item name="android:shadowColor">@color/colorPh</item>
-    </style>
-
+<!--    <style name="BottomNavigation">-->
+<!--        <item name="itemTextColor"></item>-->
+<!--        <item  name="itemIconTint">@color/colorNavItem</item>-->
+<!--    </style>-->
 </resources>

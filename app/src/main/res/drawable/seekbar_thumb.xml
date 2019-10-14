@@ -9,7 +9,7 @@
 <!--        android:startColor="@color/colorPrimary" />-->
 
     <size
-        android:height="35dp"
-        android:width="35dp" />
+        android:height="34dp"
+        android:width="34dp" />
 
 </shape>

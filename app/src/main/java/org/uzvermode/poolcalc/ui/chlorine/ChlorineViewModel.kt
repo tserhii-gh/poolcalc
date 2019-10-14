@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class ChlorineViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Chlorine Fragment"
+        value = "Chlorine Fragment not implemented!"
     }
     val text: LiveData<String> = _text
 }

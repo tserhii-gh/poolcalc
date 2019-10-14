@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class PhViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is pH Fragment"
+        value = "pH Fragment not implemented!"
     }
     val text: LiveData<String> = _text
 }
