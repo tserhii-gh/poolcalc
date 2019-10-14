@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorLED"
         android:orientation="horizontal"
         android:padding="20dp">
 
@@ -36,20 +36,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/led_matrix"
                     android:text="@string/not_av"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="60sp" />
+                    android:textColor="@color/colorPh"
+                    android:textSize="60sp"/>
 
                 <TextView
                     android:id="@+id/suff_ph"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/led_matrix"
                     android:gravity="center_vertical"
                     android:text="@string/title_ph"
-                    android:textSize="40sp" />
+                    android:textColor="@color/colorUnits"
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -69,20 +68,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/led_matrix"
                     android:text="@string/not_av"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/colorRx"
                     android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/suff_redox"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/led_matrix"
                     android:gravity="center_vertical"
                     android:text="@string/unit_redox"
-                    android:textSize="40sp" />
+                    android:textColor="@color/colorUnits"
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -101,29 +99,36 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/led_matrix"
                     android:text="@string/not_av"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/colorCl"
                     android:textSize="60sp" />
 
                 <TextView
                     android:id="@+id/suff_chlorine"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/led_matrix"
                     android:gravity="center_vertical"
                     android:text="@string/unit_chlorine"
-                    android:textSize="40sp" />
+                    android:textColor="@color/colorUnits"
+                    android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="@string/title_ph"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <SeekBar
         android:id="@+id/ph_level"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:max="14"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
@@ -132,19 +137,25 @@
         android:splitTrack="false"
         android:thumb="@drawable/seekbar_thumb" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="@string/unit_redox"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <SeekBar
         android:id="@+id/rx_level"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:max="380"
         android:paddingStart="25dp"
         android:paddingEnd="25dp"
         android:progress="180"
-        android:progressBackgroundTint="@color/colorAccent"
         android:progressDrawable="@drawable/progress_drawable"
         android:splitTrack="false"
         android:thumb="@drawable/seekbar_thumb" />
-
 
 </LinearLayout>

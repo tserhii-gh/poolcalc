@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorLED">#42A5F5</color>
     <color name="colorPrimary">#03A9F4</color>
-    <color name="colorPrimaryDark">#1495F1</color>
+    <color name="colorProgressBar">#2196F3</color>
+    <color name="colorThumb">#64B5F6</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorUnits">#ededed</color>
+    <color name="colorPh">#FFFFFF</color>
+    <color name="colorRx">#FFFFFF</color>
+    <color name="colorCl">#FFFFFF</color>
 </resources>

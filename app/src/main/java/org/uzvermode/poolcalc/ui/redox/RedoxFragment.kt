@@ -1,16 +1,21 @@
 package org.uzvermode.poolcalc.ui.redox
 
+import android.content.Context
+import android.graphics.Color
 import android.icu.text.DecimalFormat
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.NumberPicker
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import kotlinx.android.synthetic.main.fragment_redox.*
 import org.uzvermode.poolcalc.R
 import org.uzvermode.poolcalc.data.ClPhTable
 
@@ -26,6 +31,7 @@ class RedoxFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
         redoxViewModel =
             ViewModelProviders.of(this).get(RedoxViewModel::class.java)
@@ -64,6 +70,13 @@ class RedoxFragment : Fragment() {
             }
         })
         textPh.text = getConvertedPhValue(phSeekBar.progress)
+//        context?.let {
+//            textPh.setShadowLayer(9.0f,0.0f,0.0f, ContextCompat.getColor(it ,R.color.colorPh))
+//            textRedox.setShadowLayer(9.0f,0.0f,0.0f, ContextCompat.getColor(it ,R.color.colorRx))
+//            textChlorine.setShadowLayer(9.0f,0.0f,0.0f, ContextCompat.getColor(it ,R.color.colorCl))
+//            textPh.setShadowLayer(9.0f,0.0f,0.0f, ContextCompat.getColor(it ,R.color.colorCl))
+//        }
+//        textPh.setShadowLayer(10.0f,5.0f,5.0f, Color.BLUE)
         textRedox.text = getConvertedRxValue(rxSeekBar.progress)
 
         redoxViewModel.text.observe(this, Observer {
